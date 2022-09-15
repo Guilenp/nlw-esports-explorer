@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+:root {
+    --corfundo: #121214;
+    --font: 'Inter', sans-serif;
+    --corp: #A1A1AA;
+    --corsec: white;
+    --cordiv: #2A2634;
+    --corgrad1:#9572FC 0%;
+    --corgrad2: #43E7AD 50.52%;
+    --corgrad3: #E2D45C 100%;
+    --bordachannel: #443E54;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+
+body * {
+    font-family: var(--font);
+    line-height: 160%;
+}
+
+body {
+    background-image: url(./assets/bg.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: var(--corfundo);
+}
+header {
+    margin-top: 32px;
+    height: calc(120px + 32px);
+}
+header div {
+    background-image: linear-gradient(90deg, var(--corgrad1), var(--corgrad2), var(--corgrad3));
+    border-radius: 50%;
+    margin: auto;
+    padding: 4px;
+    width: 120px;
+    display: flex;
+    transition: transform 0.5s;
+}
+header div:hover {
+    transform: scale(1.1);
+
+
+}
+header img {
+    width: 100%;
+    border-radius: 50%;
+}
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    gap: 24px;
+
+    margin: 32px auto;
+}
+section {
+    color: var(--corsec);
+    background-image: linear-gradient(90deg, var(--corgrad1), var(--corgrad2), var(--corgrad3));
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: var(--cordiv) ;
+    padding: 24px 32px 32px 32px;
+    border-radius: 8px;
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+section p {
+    letter-spacing: -0.18px;
+    color: var(--corp);
+}
+
+section ul {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    border-radius: 8px;
+    width: 90px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid var(--bordachannel);
+}
+
+/* Animation */
+
+header div {
+    animation: fromTop .7s .5s backwards;
+/*    animation-delay: 1s; Declarado em cima */
+}
+
+@keyframes fromTop {
+    from { 
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+}
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+main section:nth-child(2) {
+    animation-delay: .2s;
+}
+main section:nth-child(3) {
+    animation-delay: .7s;
+}
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
